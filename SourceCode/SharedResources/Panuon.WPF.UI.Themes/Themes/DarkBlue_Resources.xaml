@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:rs="clr-namespace:Panuon.WPF.UI.Themes.Resources">
+
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.WindowBackground}">#1E1E1E</SolidColorBrush>
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.BodyForeground}">#FFFFFF</SolidColorBrush>
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.BodyInvertedForeground}">#FFFFFF</SolidColorBrush>
+
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.InputBackground}">#FEFEFE</SolidColorBrush>
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.InputBorderBrush}">#8E8E8E</SolidColorBrush>
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.InputForeground}">#000000</SolidColorBrush>
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.InputWatermarkForeground}">#AAAAAA</SolidColorBrush>
+
+    <Color x:Key="{x:Static rs:ResourceKeys.PrimaryColor}">#1CA6EB</Color>
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.PrimaryBrush}">#1CA6EB</SolidColorBrush>
+
+    <Color x:Key="{x:Static rs:ResourceKeys.ShadowColor}">#ADE4FF</Color>
+
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.DangerBrush}">#FF2C2C</SolidColorBrush>
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.WarningBrush}">#FACD50</SolidColorBrush>
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.SuccessBrush}">#67C431</SolidColorBrush>
+
+</ResourceDictionary>

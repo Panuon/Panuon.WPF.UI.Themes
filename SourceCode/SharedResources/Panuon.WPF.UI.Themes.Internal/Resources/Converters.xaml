@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:irs="clr-namespace:Panuon.WPF.UI.Themes.Internal.Resources"
+                    xmlns:icv="clr-namespace:Panuon.WPF.UI.Themes.Internal.Converters">
+
+    <icv:ElementFontFamilyConverter x:Key="{x:Static irs:ConverterKeys.ElementFontFamilyConverter}" />
+    <icv:ElementFontSizeConverter x:Key="{x:Static irs:ConverterKeys.ElementFontSizeConverter}" />
+    <icv:ElementFontWeightsConverter x:Key="{x:Static irs:ConverterKeys.ElementFontWeightsConverter}" />
+    <icv:ElementCornerRadiusConverter x:Key="{x:Static irs:ConverterKeys.ElementCornerRadiusConverter}" />
+    <icv:ElementPaddingConverter x:Key="{x:Static irs:ConverterKeys.ElementPaddingConverter}" />
+    <icv:StylistBrushConverter x:Key="{x:Static irs:ConverterKeys.StylistBrushConverter}" />
+    <icv:StylistColorConverter x:Key="{x:Static irs:ConverterKeys.StylistColorConverter}" />
+    <icv:StylistDoubleConverter x:Key="{x:Static irs:ConverterKeys.StylistDoubleConverter}" />
+    <icv:StylistThicknessConverter x:Key="{x:Static irs:ConverterKeys.StylistThicknessConverter}" />
+    <icv:ThemeBrushConverter x:Key="{x:Static irs:ConverterKeys.ThemeBrushConverter}" />
+</ResourceDictionary>

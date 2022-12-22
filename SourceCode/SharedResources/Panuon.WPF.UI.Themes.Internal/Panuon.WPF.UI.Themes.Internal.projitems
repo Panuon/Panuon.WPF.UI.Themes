@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>6fce94a2-834e-49d1-9cce-f0bde1353c66</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Panuon.WPF.UI.Themes.Internal</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Enums\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ElementPaddingConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ElementFontSizeConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ElementFontWeightConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ElementFontFamilyConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ElementCornerRadiusConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\StylistColorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\StylistDoubleConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\StylistThicknessConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\StylistBrushConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ThemeBrushConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Resources\ConverterKeys.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Resources\Converters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+</Project>

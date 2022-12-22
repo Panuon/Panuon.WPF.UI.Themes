@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32802.462
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core31", "Core31", "{8C76CCF9-B7E0-4764-AD4D-D3A36E6D1396}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net45", "Net45", "{36CBA019-657B-4225-9054-85BBED28C5A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net472", "Net472", "{69F18EA3-431C-4945-919C-30E9BFD049ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net48", "Net48", "{016A0A9A-4CF2-47C3-A705-D50360E61A77}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net5", "Net5", "{8346BA94-D89C-4450-823B-25F3EE7C280D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net6", "Net6", "{C5412E59-E2E0-43C1-ABF9-6E52B5756DD5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net462", "Net462", "{177ADB75-17E8-4B11-AE5A-5C7D7EDA63E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedResources", "SharedResources", "{0DFC4E2B-75FF-491C-84ED-A530282DEA43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Panuon.WPF.UI.Themes", "Net472\Panuon.WPF.UI.Themes\Panuon.WPF.UI.Themes.csproj", "{A7507756-677C-48B7-95A9-62B1A0CBB14D}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Panuon.WPF.UI.Themes", "SharedResources\Panuon.WPF.UI.Themes\Panuon.WPF.UI.Themes.shproj", "{3D98ACBA-6FB1-4A00-B7D0-1F55EE571489}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7507756-677C-48B7-95A9-62B1A0CBB14D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7507756-677C-48B7-95A9-62B1A0CBB14D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7507756-677C-48B7-95A9-62B1A0CBB14D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7507756-677C-48B7-95A9-62B1A0CBB14D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A7507756-677C-48B7-95A9-62B1A0CBB14D} = {69F18EA3-431C-4945-919C-30E9BFD049ED}
+		{3D98ACBA-6FB1-4A00-B7D0-1F55EE571489} = {0DFC4E2B-75FF-491C-84ED-A530282DEA43}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDF99DD8-DF5F-4161-A227-2C048ECEA258}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		SharedResources\Panuon.WPF.UI.Themes\Panuon.WPF.UI.Themes.projitems*{3d98acba-6fb1-4a00-b7d0-1f55ee571489}*SharedItemsImports = 13
+		SharedResources\Panuon.WPF.UI.Themes\Panuon.WPF.UI.Themes.projitems*{a7507756-677c-48b7-95a9-62b1a0cbb14d}*SharedItemsImports = 4
+	EndGlobalSection
+EndGlobal

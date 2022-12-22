@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32802.462
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples", "Samples\Samples.csproj", "{1DB4C24C-9C38-4AD9-BE74-D565C09BC766}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net472", "Net472", "{52619D5E-E203-4228-B8A8-CA82CD5EE94E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedResources", "SharedResources", "{03B43A0D-A626-4497-A65C-9414BA10E9E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Panuon.WPF.UI.Themes", "..\..\Net472\Panuon.WPF.UI.Themes\Panuon.WPF.UI.Themes.csproj", "{A7507756-677C-48B7-95A9-62B1A0CBB14D}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Panuon.WPF.UI.Themes", "..\..\SharedResources\Panuon.WPF.UI.Themes\Panuon.WPF.UI.Themes.shproj", "{3D98ACBA-6FB1-4A00-B7D0-1F55EE571489}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DB4C24C-9C38-4AD9-BE74-D565C09BC766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DB4C24C-9C38-4AD9-BE74-D565C09BC766}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DB4C24C-9C38-4AD9-BE74-D565C09BC766}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DB4C24C-9C38-4AD9-BE74-D565C09BC766}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7507756-677C-48B7-95A9-62B1A0CBB14D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7507756-677C-48B7-95A9-62B1A0CBB14D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7507756-677C-48B7-95A9-62B1A0CBB14D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7507756-677C-48B7-95A9-62B1A0CBB14D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A7507756-677C-48B7-95A9-62B1A0CBB14D} = {52619D5E-E203-4228-B8A8-CA82CD5EE94E}
+		{3D98ACBA-6FB1-4A00-B7D0-1F55EE571489} = {03B43A0D-A626-4497-A65C-9414BA10E9E5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3EC06D0-DDED-488D-BC0D-0BAFD80407E0}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\..\SharedResources\Panuon.WPF.UI.Themes\Panuon.WPF.UI.Themes.projitems*{3d98acba-6fb1-4a00-b7d0-1f55ee571489}*SharedItemsImports = 13
+		..\..\SharedResources\Panuon.WPF.UI.Themes\Panuon.WPF.UI.Themes.projitems*{a7507756-677c-48b7-95a9-62b1a0cbb14d}*SharedItemsImports = 4
+	EndGlobalSection
+EndGlobal

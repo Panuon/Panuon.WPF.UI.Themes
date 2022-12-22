@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:rs="clr-namespace:Panuon.WPF.UI.Themes.Resources">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI.Themes;component/Themes/DarkBlue_Resources.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI.Themes;component/Themes/Collection.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
