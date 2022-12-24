@@ -21,6 +21,8 @@
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:ComboBoxStylist.Style)"
+                             RelativeSource="{RelativeSource Self}" />
                 </MultiBinding>
             </Setter.Value>
         </Setter>
@@ -39,7 +41,11 @@
         <Setter Property="pu:ShadowHelper.Opacity"
                 Value="0.5" />
         <Setter Property="pu:ShadowHelper.BlurRadius"
-                Value="15" />
+                Value="25" />
+        <Setter Property="pu:DropDownHelper.ClipDockSideShadow"
+                Value="False" />
+        <Setter Property="pu:DropDownHelper.BorderThickness"
+                Value="0" />
         <Setter Property="pu:ComboBoxHelper.CornerRadius">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.ElementCornerRadiusConverter}}">
@@ -77,7 +83,7 @@
         <Setter Property="pu:ComboBoxHelper.FocusedBorderBrush">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
-                              ConverterParameter="Solid:null;Border:InputBorderBrush;ShadowBorder:">
+                              ConverterParameter="Solid:null;Border:;ShadowBorder:">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
@@ -138,18 +144,6 @@
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
                               ConverterParameter="Solid:BodyInvertedForeground;Border:BodyInvertedForeground;ShadowBorder:BodyInvertedForeground">
-                    <Binding RelativeSource="{RelativeSource Self}" />
-                    <Binding Path="(local:GeneralStylist.Feature)"
-                             RelativeSource="{RelativeSource Self}" />
-                    <Binding Path="(local:ComboBoxStylist.Style)"
-                             RelativeSource="{RelativeSource Self}" />
-                </MultiBinding>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="pu:DropDownHelper.BorderBrush">
-            <Setter.Value>
-                <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
-                              ConverterParameter="Solid:DropDownBorderBrush;Border:InputBorderBrush;ShadowBorder:">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />

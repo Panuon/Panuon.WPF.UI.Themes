@@ -15,13 +15,13 @@ namespace Panuon.WPF.UI.Themes.Internal.Converters
 
             if (generalFeatures.HasFlag(GeneralFeatures.Small))
             {
-                return new Thickness(12, 7, 12, 7);
+                return new Thickness(12, 0, 12, 0);
             }
             else if (generalFeatures.HasFlag(GeneralFeatures.Large))
             {
-                return new Thickness(20, 15, 20, 15);
+                return new Thickness(20, 0, 20, 0);
             }
-            return new Thickness(15, 10, 15, 10);
+            return new Thickness(15, 0, 15, 0);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

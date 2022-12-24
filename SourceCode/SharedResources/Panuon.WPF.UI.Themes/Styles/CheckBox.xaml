@@ -17,9 +17,11 @@
         <Setter Property="pu:CheckBoxHelper.BoxWidth">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistDoubleConverter}}"
-                              ConverterParameter="Large:19;Normal:16;Small:14">
+                              ConverterParameter="Large:26;Normal:18;Small:14">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
+                             RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:CheckBoxStylist.Style)"
                              RelativeSource="{RelativeSource Self}" />
                 </MultiBinding>
             </Setter.Value>
@@ -27,9 +29,11 @@
         <Setter Property="pu:CheckBoxHelper.BoxHeight">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistDoubleConverter}}"
-                              ConverterParameter="Large:19;Normal:16;Small:14">
+                              ConverterParameter="Large:26;Normal:18;Small:14">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
+                             RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:CheckBoxStylist.Style)"
                              RelativeSource="{RelativeSource Self}" />
                 </MultiBinding>
             </Setter.Value>

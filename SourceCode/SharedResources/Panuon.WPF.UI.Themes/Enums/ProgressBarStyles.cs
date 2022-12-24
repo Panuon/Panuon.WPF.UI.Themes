@@ -4,7 +4,6 @@
     {
         Solid,
         ColorSolid,
-        ColorSolidShadow,
         Border,
     }
 }

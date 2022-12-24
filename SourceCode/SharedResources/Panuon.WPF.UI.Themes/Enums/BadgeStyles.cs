@@ -1,8 +1,7 @@
 ﻿namespace Panuon.WPF.UI.Themes
 {
-    public enum RingProgressBarStyles
+    public enum BadgeStyles
     {
         Solid,
-        ColorSolid,
     }
 }

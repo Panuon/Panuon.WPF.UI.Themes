@@ -9,7 +9,8 @@
     <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.InputBackground}">#F2F3F4</SolidColorBrush>
     <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.InputBorderBrush}">#D2D2D2</SolidColorBrush>
     <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.InputForeground}">#000000</SolidColorBrush>
-    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.InputWatermarkForeground}">#AAAAAA</SolidColorBrush>
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.InputWatermarkForeground}">#8E8E8E</SolidColorBrush>
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.InputSecondaryWatermarkForeground}">#BFBFBF</SolidColorBrush>
     <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.DescriptionForeground}">#BABABA</SolidColorBrush>
     <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.InputHoverSheetBackground}">#F8F9FA</SolidColorBrush>
     <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.InputSelectedSheetBackground}">#F2F3F4</SolidColorBrush>
@@ -17,21 +18,27 @@
     <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.DropDownBorderBrush}">#EAEAEA</SolidColorBrush>
 
     <Color x:Key="{x:Static rs:ResourceKeys.DefaultShadowColor}">#D1D2D3</Color>
-    <Color x:Key="{x:Static rs:ResourceKeys.PrimaryColor}">#1CA6EB</Color>
-    <Color x:Key="{x:Static rs:ResourceKeys.InfoColor}">#1CA6EB</Color>
+    <Color x:Key="{x:Static rs:ResourceKeys.PrimaryColor}">#33B4F5</Color>
+    <Color x:Key="{x:Static rs:ResourceKeys.InfoColor}">#33B4F5</Color>
     <Color x:Key="{x:Static rs:ResourceKeys.DefaultColor}">#CDCDCD</Color>
     <Color x:Key="{x:Static rs:ResourceKeys.DangerColor}">#FF4D4D</Color>
     <Color x:Key="{x:Static rs:ResourceKeys.WarningColor}">#FACD50</Color>
     <Color x:Key="{x:Static rs:ResourceKeys.SuccessColor}">#67C431</Color>
 
-    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.PrimaryBrush}">#1CA6EB</SolidColorBrush>
-    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.InfoBrush}">#1CA6EB</SolidColorBrush>
-    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.DefaultBrush}">#CDCDCD</SolidColorBrush>
-    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.DangerBrush}">#FF4D4D</SolidColorBrush>
-    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.WarningBrush}">#FACD50</SolidColorBrush>
-    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.SuccessBrush}">#67C431</SolidColorBrush>
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.PrimaryBrush}"
+                     Color="{StaticResource {x:Static rs:ResourceKeys.PrimaryColor}}"/>
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.InfoBrush}"
+                     Color="{StaticResource {x:Static rs:ResourceKeys.InfoColor}}" />
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.DefaultBrush}"
+                     Color="{StaticResource {x:Static rs:ResourceKeys.DefaultColor}}" />
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.DangerBrush}"
+                     Color="{StaticResource {x:Static rs:ResourceKeys.DangerColor}}" />
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.WarningBrush}"
+                     Color="{StaticResource {x:Static rs:ResourceKeys.WarningColor}}" />
+    <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.SuccessBrush}"
+                     Color="{StaticResource {x:Static rs:ResourceKeys.SuccessColor}}" />
 
-    <Color x:Key="{x:Static rs:ResourceKeys.ShadowColor}">#66C9FA</Color>
+    <Color x:Key="{x:Static rs:ResourceKeys.PrimaryShadowColor}">#99DDFF</Color>
 
     <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.SeparatorBrush}">#DFDFDF</SolidColorBrush>
 

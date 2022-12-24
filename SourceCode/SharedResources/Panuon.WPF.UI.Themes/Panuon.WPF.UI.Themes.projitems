@@ -275,6 +275,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\BreadcrumbStyles.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\BadgeStyles.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\RingProgressBarStyles.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\ProgressBarStyles.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\PasswordBoxStyles.cs" />
@@ -287,6 +289,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Enums\CheckBoxStyles.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\GeneralFeatures.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\SwitchStyles.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\BreadcrumbStylist.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\BadgeStylist.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\RingProgressBarStylist.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ProgressBarStylist.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\PasswordBoxStylist.cs" />

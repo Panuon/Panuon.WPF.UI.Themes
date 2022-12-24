@@ -21,6 +21,8 @@
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:RingProgressBarStylist.Style)"
+                             RelativeSource="{RelativeSource Self}" />
                 </MultiBinding>
             </Setter.Value>
         </Setter>
@@ -30,6 +32,8 @@
                               ConverterParameter="Large:150;Normal:100;Small:50">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
+                             RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:RingProgressBarStylist.Style)"
                              RelativeSource="{RelativeSource Self}" />
                 </MultiBinding>
             </Setter.Value>
@@ -45,7 +49,7 @@
         <Setter Property="FontWeight"
                 Value="{Binding Path=(local:GeneralStylist.Feature), Converter={StaticResource {x:Static irs:ConverterKeys.ElementFontWeightsConverter}}, RelativeSource={RelativeSource Self}}" />
         <Setter Property="pu:ShadowHelper.Opacity"
-                Value="0.5" />
+                Value="0.7" />
         <Setter Property="pu:ShadowHelper.BlurRadius"
                 Value="15" />
         <Setter Property="IsPercentVisible"
@@ -57,7 +61,7 @@
         <Setter Property="Background">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
-                              ConverterParameter="Solid:InputBorderBrush,0.3;ColorBorder:null;ColorBorderShadow:null;Border:null">
+                              ConverterParameter="ColorSolid:null;Solid:null">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
@@ -69,7 +73,7 @@
         <Setter Property="BorderBrush">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
-                              ConverterParameter="Solid:null;ColorBorder:,0.2;ColorBorderShadow:,0.2;Border:InputBorderBrush,0.3">
+                              ConverterParameter="ColorSolid:,0.2;Solid:InputBorderBrush,0.3">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
@@ -85,13 +89,15 @@
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:RingProgressBarStylist.Style)"
+                             RelativeSource="{RelativeSource Self}" />
                 </MultiBinding>
             </Setter.Value>
         </Setter>
         <Setter Property="Foreground">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
-                              ConverterParameter="Solid:;ColorBorder:;ColorBorderShadow:;Border:">
+                              ConverterParameter="ColorSolid:;Solid:">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
@@ -103,7 +109,7 @@
         <Setter Property="ShadowColor">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistColorConverter}}"
-                              ConverterParameter="Solid:null;ColorBorder:null;ColorBorderShadow:;Border:null">
+                              ConverterParameter="ColorSolid:null;Solid:null">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />

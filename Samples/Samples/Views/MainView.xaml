@@ -7,12 +7,14 @@
             xmlns:pu="clr-namespace:Panuon.WPF.UI;assembly=Panuon.WPF.UI"
             xmlns:purs="clr-namespace:Panuon.WPF.UI.Resources;assembly=Panuon.WPF.UI"
             xmlns:puthe="clr-namespace:Panuon.WPF.UI.Themes;assembly=Panuon.WPF.UI.Themes"
+            xmlns:puthers="clr-namespace:Panuon.WPF.UI.Themes.Resources;assembly=Panuon.WPF.UI.Themes"
             mc:Ignorable="d"
             Title="MainView"
             Height="600"
             Width="1000"
             WindowStartupLocation="CenterScreen"
-            MaskBrush="#AA000000">
+            MaskBrush="#AA000000"
+            pu:ScrollBarHelper.ThumbBackground="{DynamicResource {x:Static puthers:ResourceKeys.InputBorderBrush}}">
     <pu:WindowXCaption.HeaderTemplate>
         <DataTemplate>
             <StackPanel Orientation="Horizontal"
@@ -23,94 +25,246 @@
             </StackPanel>
         </DataTemplate>
     </pu:WindowXCaption.HeaderTemplate>
-    <Grid>
-        <Grid Margin="20,10,20,20">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <TextBlock Text="Samples"
-                           FontSize="30" />
-                <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Right"
-                            VerticalAlignment="Center">
-                    <Button Content="MessageBoxX"
-                            Click="BtnTestMessageBoxX_Click" />
-                    <Button Margin="10,0,0,0"
-                            Content="NoticeBox"
-                            Click="BtnTestNoticeBox_Click" />
-                    <Button x:Name="BtnTestPendingBox"
-                            Margin="10,0,0,0"
-                            Content="PendingBox"
-                            Click="BtnTestPendingBox_Click" />
+    <Grid Margin="30,10,30,30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock VerticalAlignment="Center"
+                       Text="Change General Feature :" />
+            <ComboBox Margin="15,0,0,0"
+                      pu:ComboBoxHelper.Watermark="Select Control Size">
+                <ComboBoxItem Content="Small" />
+                <ComboBoxItem Content="Normal" />
+                <ComboBoxItem Content="Large" />
+            </ComboBox>
+        </StackPanel>
+        <Rectangle Grid.Row="1"
+                   Margin="0,15"
+                   Height="1"
+                   Fill="{DynamicResource {x:Static puthers:ResourceKeys.SeparatorBrush}}" />
+        <ScrollViewer Grid.Row="2">
+            <StackPanel>
+                <TextBlock Text="Badge"
+                           FontSize="16"
+                           FontWeight="Bold" />
+                <StackPanel Margin="0,15,0,0"
+                            Orientation="Horizontal">
+                    <pu:Badge Margin="15,0,0,0"
+                              Content="99+"
+                              puthe:GeneralStylist.Feature="DangerColor" />
                 </StackPanel>
-                <ScrollViewer Grid.Row="1"
-                              Visibility="Collapsed"
-                              Margin="0,15,0,0"
-                              VerticalScrollBarVisibility="Disabled"
-                              HorizontalScrollBarVisibility="Auto"
-                              pu:ScrollViewerHelper.MouseWheelDelta="96"
-                              pu:ScrollViewerHelper.AnimationDuration="0:0:0.5"
-                              pu:ScrollViewerHelper.AnimationEase="CubicOut"
-                              pu:ScrollViewerHelper.ScrollBarPosition="Outside"
-                              pu:ScrollViewerHelper.WheelScrollingDirection="Horizontal">
-                    <ItemsControl x:Name="LsbExamples"
-                                  VerticalContentAlignment="Stretch"
-                                  HorizontalAlignment="Stretch">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <UniformGrid Rows="2" />
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Border Background="Transparent"
-                                        Margin="0,0,10,10"
-                                        Width="{Binding ActualHeight, Converter={StaticResource {x:Static purs:ConverterKeys.DoublePlusConverter}}, ConverterParameter=100, RelativeSource={RelativeSource Self}}"
-                                        ToolTip="{Binding ViewPath}"
-                                        Padding="5"
-                                        MouseLeftButtonDown="BtnExample_Click">
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition />
-                                            <RowDefinition Height="Auto" />
-                                            <RowDefinition Height="Auto" />
-                                        </Grid.RowDefinitions>
-                                        <Viewbox HorizontalAlignment="Center">
-                                            <ContentControl Content="{Binding PreviewView}"
-                                                            IsHitTestVisible="False" />
-                                        </Viewbox>
-                                        <TextBlock Grid.Row="1"
-                                                   Margin="0,5,0,0"
-                                                   FontWeight="Bold"
-                                                   Text="{Binding DisplayName}"
-                                                   VerticalAlignment="Center" />
-                                        <TextBlock Grid.Row="2"
-                                                   Margin="0,5,0,0"
-                                                   Foreground="DimGray"
-                                                   TextTrimming="CharacterEllipsis"
-                                                   Text="{Binding ViewPath}"
-                                                   VerticalAlignment="Center" />
-                                    </Grid>
-                                </Border>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
-                <pu:RingProgressBar Grid.Row="1"
-                                    Value="50"
-                                    Maximum="100"
-                                    puthe:RingProgressBarStylist.Style="ColorBorderShadow" />
-                <TextBlock Grid.Row="2"
-                           FontSize="14"
-                           Foreground="Gray"
-                           HorizontalAlignment="Right"
-                           Text="{Binding Now, Source={x:Static pu:Tools.DateTime}, StringFormat='MM/dd/yyyy HH:mm:ss'}" />
-            </Grid>
-        </Grid>
+                <TextBlock Margin="0,15,0,0"
+                           Text="Button"
+                           FontSize="16"
+                           FontWeight="Bold" />
+                <StackPanel Margin="0,15,0,0"
+                            Orientation="Horizontal">
+                    <Button Content="Solid | Primary" />
+                    <Button Margin="15,0,0,0"
+                            Content="Border | Default"
+                            puthe:ButtonStylist.Style="Border"
+                            puthe:GeneralStylist.Feature="DefaultColor" />
+                    <Button Margin="15,0,0,0"
+                            Content="ColorBorder | Warning"
+                            puthe:ButtonStylist.Style="ColorBorder"
+                            puthe:GeneralStylist.Feature="WarningColor" />
+                    <Button Margin="15,0,0,0"
+                            Content="Hollow | Danger"
+                            puthe:ButtonStylist.Style="Hollow"
+                            puthe:GeneralStylist.Feature="DangerColor" />
+                    <Button Margin="15,0,0,0"
+                            Content="Text | Success"
+                            puthe:ButtonStylist.Style="Text"
+                            puthe:GeneralStylist.Feature="SuccessColor" />
+                    <Button Margin="15,0,0,0"
+                            Content="ColorText | Info"
+                            puthe:ButtonStylist.Style="ColorText" />
+                </StackPanel>
+                <TextBlock Margin="0,15,0,0"
+                           Text="Breadcrumb"
+                           FontSize="16"
+                           FontWeight="Bold" />
+                <StackPanel Margin="0,15,0,0"
+                            Orientation="Horizontal">
+                    <pu:Breadcrumb>
+                        <pu:BreadcrumbItem Content="Level 1" />
+                        <pu:BreadcrumbItem Content="Level 2" />
+                        <pu:BreadcrumbItem Content="Level 3" />
+                    </pu:Breadcrumb>
+                </StackPanel>
+                <TextBlock Margin="0,15,0,0"
+                           Text="CheckBox"
+                           FontSize="16"
+                           FontWeight="Bold" />
+                <StackPanel Margin="0,15,0,0"
+                            Orientation="Horizontal">
+                    <CheckBox Content="Solid | Warning"
+                              IsChecked="True"
+                              puthe:CheckBoxStylist.Style="Solid"
+                              puthe:GeneralStylist.Feature="WarningColor" />
+                    <CheckBox Margin="15,0,0,0"
+                              Content="Border | Primary"
+                              IsChecked="True"
+                              puthe:CheckBoxStylist.Style="Border" />
+                </StackPanel>
+                <TextBlock Margin="0,15,0,0"
+                           Text="ComboBox"
+                           FontSize="16"
+                           FontWeight="Bold" />
+                <StackPanel Margin="0,15,0,0"
+                            Orientation="Horizontal">
+                    <ComboBox Width="200"
+                              pu:ComboBoxHelper.Watermark="Solid | Primary"
+                              pu:ComboBoxHelper.ClearButtonVisibility="VisibleOnHoverAndNonnull"
+                              puthe:ComboBoxStylist.Style="Solid">
+                        <ComboBoxItem Content="Item 1" />
+                        <ComboBoxItem Content="Item 2" />
+                        <ComboBoxItem Content="Item 3" />
+                        <ComboBoxItem Content="Item 4" />
+                        <ComboBoxItem Content="Item 5" />
+                    </ComboBox>
+                    <ComboBox Margin="15,0,0,0"
+                              Width="200"
+                              pu:ComboBoxHelper.Watermark="Border | Warning"
+                              pu:ComboBoxHelper.ClearButtonVisibility="VisibleOnHoverAndNonnull"
+                              puthe:ComboBoxStylist.Style="Border"
+                              puthe:GeneralStylist.Feature="WarningColor">
+                        <ComboBoxItem Content="Item 1" />
+                        <ComboBoxItem Content="Item 2" />
+                        <ComboBoxItem Content="Item 3" />
+                        <ComboBoxItem Content="Item 4" />
+                        <ComboBoxItem Content="Item 5" />
+                    </ComboBox>
+                    <ComboBox Margin="15,0,0,0"
+                              Width="200"
+                              pu:ComboBoxHelper.Watermark="ShadowBorder | Danger"
+                              pu:ComboBoxHelper.ClearButtonVisibility="VisibleOnHoverAndNonnull"
+                              puthe:ComboBoxStylist.Style="ShadowBorder"
+                              puthe:GeneralStylist.Feature="DangerColor">
+                        <ComboBoxItem Content="Item 1" />
+                        <ComboBoxItem Content="Item 2" />
+                        <ComboBoxItem Content="Item 3" />
+                        <ComboBoxItem Content="Item 4" />
+                        <ComboBoxItem Content="Item 5" />
+                    </ComboBox>
+                </StackPanel>
+                <TextBlock Margin="0,15,0,0"
+                           Text="RingProgressBar"
+                           FontSize="16"
+                           FontWeight="Bold" />
+                <StackPanel Margin="0,15,0,0"
+                            Orientation="Horizontal">
+                    <pu:RingProgressBar Value="50"
+                                        VerticalAlignment="Center" />
+                    <pu:RingProgressBar Margin="15,0,0,0"
+                                        Value="50"
+                                        VerticalAlignment="Center"
+                                        puthe:RingProgressBarStylist.Style="ColorSolid"
+                                        puthe:GeneralStylist.Feature="WarningColor" />
+                </StackPanel>
+                <TextBlock Margin="0,15,0,0"
+                           Text="Switch"
+                           FontSize="16"
+                           FontWeight="Bold" />
+                <StackPanel Margin="0,15,0,0"
+                            Orientation="Horizontal">
+                    <pu:Switch Content="Solid"
+                               IsChecked="True"
+                               VerticalAlignment="Center" />
+                    <pu:Switch Margin="15,0,0,0"
+                               VerticalAlignment="Center"
+                               Content="Border | Warning"
+                               IsChecked="True"
+                               puthe:SwitchStylist.Style="Border"
+                               puthe:GeneralStylist.Feature="WarningColor" />
+                    <pu:Switch Margin="15,0,0,0"
+                               VerticalAlignment="Center"
+                               Content="Material | Danger"
+                               IsChecked="True"
+                               puthe:SwitchStylist.Style="Material"
+                               puthe:GeneralStylist.Feature="DangerColor" />
+                </StackPanel>
+                <TextBlock Margin="0,15,0,0"
+                           Text="PasswordBox"
+                           FontSize="16"
+                           FontWeight="Bold" />
+                <StackPanel Margin="0,15,0,0"
+                            Orientation="Horizontal">
+                    <PasswordBox Width="200"
+                                 pu:PasswordBoxHelper.Watermark="Solid | Primary"
+                                 puthe:PasswordBoxStylist.Style="Solid" />
+                    <PasswordBox Margin="15,0,0,0"
+                                 Width="200"
+                                 pu:PasswordBoxHelper.Watermark="Border | Warning"
+                                 puthe:PasswordBoxStylist.Style="Border"
+                                 puthe:GeneralStylist.Feature="WarningColor" />
+                    <PasswordBox Margin="15,0,0,0"
+                                 Width="200"
+                                 pu:PasswordBoxHelper.Watermark="ShadowBorder | Danger"
+                                 puthe:PasswordBoxStylist.Style="ShadowBorder"
+                                 puthe:GeneralStylist.Feature="DangerColor" />
+                </StackPanel>
+                <TextBlock Margin="0,15,0,0"
+                           Text="PasswordBox"
+                           FontSize="16"
+                           FontWeight="Bold" />
+                <StackPanel Margin="0,15,0,0"
+                            Orientation="Horizontal">
+                    <ProgressBar Width="200"
+                                 Value="50"
+                                 puthe:ProgressBarStylist.Style="Solid" />
+                    <ProgressBar Margin="15,0,0,0"
+                                 Width="200"
+                                 Value="50"
+                                 puthe:ProgressBarStylist.Style="ColorSolid"
+                                 puthe:GeneralStylist.Feature="WarningColor" />
+                    <ProgressBar Margin="15,0,0,0"
+                                 Width="200"
+                                 Value="50"
+                                 puthe:ProgressBarStylist.Style="Border"
+                                 puthe:GeneralStylist.Feature="DangerColor" />
+                </StackPanel>
+                <TextBlock Margin="0,15,0,0"
+                           Text="RadioButton"
+                           FontSize="16"
+                           FontWeight="Bold" />
+                <StackPanel Margin="0,15,0,0"
+                            Orientation="Horizontal">
+                    <RadioButton Content="Solid"
+                                 IsChecked="True"
+                                 puthe:RadioButtonStylist.Style="Solid"
+                                 puthe:GeneralStylist.Feature="WarningColor" />
+                    <RadioButton Margin="15,0,0,0"
+                                 Content="Border"
+                                 puthe:RadioButtonStylist.Style="Border"
+                                 puthe:GeneralStylist.Feature="DangerColor" />
+                </StackPanel>
+                <TextBlock Margin="0,15,0,0"
+                           Text="TextBox"
+                           FontSize="16"
+                           FontWeight="Bold" />
+                <StackPanel Margin="0,15,0,0"
+                            Orientation="Horizontal">
+                    <TextBox Width="200"
+                             pu:TextBoxHelper.Watermark="Solid | Primary"
+                             puthe:TextBoxStylist.Style="Solid" />
+                    <TextBox Margin="15,0,0,0"
+                             Width="200"
+                             pu:TextBoxHelper.Watermark="Border | Warning"
+                             puthe:TextBoxStylist.Style="Border"
+                             puthe:GeneralStylist.Feature="WarningColor,Bold,Large" />
+                    <TextBox Margin="15,0,0,0"
+                             Width="200"
+                             pu:TextBoxHelper.Watermark="ShadowBorder | Danger"
+                             puthe:TextBoxStylist.Style="ShadowBorder"
+                             puthe:GeneralStylist.Feature="DangerColor" />
+                </StackPanel>
 
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </pu:WindowX>
 

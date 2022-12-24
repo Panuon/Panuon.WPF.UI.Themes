@@ -17,9 +17,11 @@
         <Setter Property="BoxWidth">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistDoubleConverter}}"
-                              ConverterParameter="Large:36;Normal:28;Small:20">
+                              ConverterParameter="Large:40;Normal:30;Small:22">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
+                             RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:SwitchStylist.Style)"
                              RelativeSource="{RelativeSource Self}" />
                 </MultiBinding>
             </Setter.Value>
@@ -31,15 +33,19 @@
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:SwitchStylist.Style)"
+                             RelativeSource="{RelativeSource Self}" />
                 </MultiBinding>
             </Setter.Value>
         </Setter>
         <Setter Property="ToggleSize">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistDoubleConverter}}"
-                              ConverterParameter="Large:16;Normal:12;Small:8">
+                              ConverterParameter="Large:16;Normal-Material:20;Normal:12;Small:8">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
+                             RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:SwitchStylist.Style)"
                              RelativeSource="{RelativeSource Self}" />
                 </MultiBinding>
             </Setter.Value>
@@ -56,14 +62,58 @@
                 Value="{Binding Path=(local:GeneralStylist.Feature), Converter={StaticResource {x:Static irs:ConverterKeys.ElementFontWeightsConverter}}, RelativeSource={RelativeSource Self}}" />
         <Setter Property="BorderBrush"
                 Value="{DynamicResource {x:Static rs:ResourceKeys.InputBorderBrush}}" />
-        <Setter Property="ToggleBrush"
-                Value="{DynamicResource {x:Static rs:ResourceKeys.InputBorderBrush}}" />
-        <Setter Property="ToggleShadowColor"
-                Value="{x:Null}" />
+        <Setter Property="BorderThickness">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistThicknessConverter}}"
+                              ConverterParameter="Solid:0;Material:0;Border:1.5">
+                    <Binding RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:GeneralStylist.Feature)"
+                             RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:SwitchStylist.Style)"
+                             RelativeSource="{RelativeSource Self}" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToggleBrush">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
+                              ConverterParameter="Solid:BodyInvertedForeground;Material:BodyInvertedForeground;Border:InputBorderBrush">
+                    <Binding RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:GeneralStylist.Feature)"
+                             RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:SwitchStylist.Style)"
+                             RelativeSource="{RelativeSource Self}" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToggleShadowColor">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistColorConverter}}"
+                              ConverterParameter="Solid:null;Material:DefaultShadowColor;Border:null">
+                    <Binding RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:GeneralStylist.Feature)"
+                             RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:SwitchStylist.Style)"
+                             RelativeSource="{RelativeSource Self}" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
+                              ConverterParameter="Solid:InputBorderBrush;Material:InputBorderBrush;Border:[Transparent]">
+                    <Binding RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:GeneralStylist.Feature)"
+                             RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:SwitchStylist.Style)"
+                             RelativeSource="{RelativeSource Self}" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
         <Setter Property="CheckedBackground">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
-                              ConverterParameter="Solid:;Border:null">
+                              ConverterParameter="Solid:;Material:;Border:null">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
@@ -75,7 +125,7 @@
         <Setter Property="CheckedBorderBrush">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
-                              ConverterParameter="Solid:;Border:">
+                              ConverterParameter="Solid:;Material:;Border:">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
@@ -87,7 +137,7 @@
         <Setter Property="CheckedToggleBrush">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
-                              ConverterParameter="Solid:BodyInvertedForeground;Border:">
+                              ConverterParameter="Solid:BodyInvertedForeground;Material:BodyInvertedForeground;Border:">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
@@ -96,6 +146,10 @@
                 </MultiBinding>
             </Setter.Value>
         </Setter>
+        <Setter Property="pu:ShadowHelper.Opacity"
+                Value="0.7" />
+        <Setter Property="pu:ShadowHelper.BlurRadius"
+                Value="15" />
     </Style>
 
 </ResourceDictionary>

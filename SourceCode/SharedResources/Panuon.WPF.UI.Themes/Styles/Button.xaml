@@ -18,6 +18,18 @@
                 Value="Top" />
         <Setter Property="HorizontalAlignment"
                 Value="Left" />
+        <Setter Property="Height">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistDoubleConverter}}"
+                              ConverterParameter="Large:40;Normal:35;Small:20">
+                    <Binding RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:GeneralStylist.Feature)"
+                             RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:ButtonStylist.Style)"
+                             RelativeSource="{RelativeSource Self}" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Padding"
                 Value="{Binding Path=(local:GeneralStylist.Feature), Converter={StaticResource {x:Static irs:ConverterKeys.ElementPaddingConverter}}, RelativeSource={RelativeSource Self}}" />
         <Setter Property="FontFamily"
@@ -26,9 +38,18 @@
                 Value="{Binding Path=(local:GeneralStylist.Feature), Converter={StaticResource {x:Static irs:ConverterKeys.ElementFontSizeConverter}}, RelativeSource={RelativeSource Self}}" />
         <Setter Property="FontWeight"
                 Value="{Binding Path=(local:GeneralStylist.Feature), Converter={StaticResource {x:Static irs:ConverterKeys.ElementFontWeightsConverter}}, RelativeSource={RelativeSource Self}}" />
-        <!--TODO-->
-        <Setter Property="BorderThickness"
-                Value="1" />
+        <Setter Property="BorderThickness">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistThicknessConverter}}"
+                              ConverterParameter="Solid:0;Border:1.5;ColorBorder:1.5;Hollow:1.5;Text:1.5;ColorText:1.5">
+                    <Binding RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:GeneralStylist.Feature)"
+                             RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:ButtonStylist.Style)"
+                             RelativeSource="{RelativeSource Self}" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
         <Setter Property="pu:ButtonHelper.CornerRadius">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.ElementCornerRadiusConverter}}">
@@ -54,7 +75,7 @@
         <Setter Property="BorderBrush">
             <Setter.Value>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
-                              ConverterParameter="Solid:null;Border:BodyForeground;ColorBorder:;Hollow:;Text:null;ColorText:null">
+                              ConverterParameter="Solid:null;Border:InputBorderBrush;ColorBorder:;Hollow:;Text:null;ColorText:null">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />

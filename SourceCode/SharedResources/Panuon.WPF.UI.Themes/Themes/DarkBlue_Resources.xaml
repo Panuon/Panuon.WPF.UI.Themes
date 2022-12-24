@@ -14,7 +14,7 @@
     <Color x:Key="{x:Static rs:ResourceKeys.PrimaryColor}">#1CA6EB</Color>
     <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.PrimaryBrush}">#1CA6EB</SolidColorBrush>
 
-    <Color x:Key="{x:Static rs:ResourceKeys.ShadowColor}">#ADE4FF</Color>
+    <Color x:Key="{x:Static rs:ResourceKeys.PrimaryShadowColor}">#ADE4FF</Color>
 
     <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.DangerBrush}">#FF2C2C</SolidColorBrush>
     <SolidColorBrush x:Key="{x:Static rs:ResourceKeys.WarningBrush}">#FACD50</SolidColorBrush>
