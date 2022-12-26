@@ -88,7 +88,7 @@ namespace Panuon.WPF.UI.Themes.Internal.Converters
                     }
                     else
                     {
-                        percent = double.Parse(colorSplits[1]);
+                       percent = double.Parse(colorSplits[1]);
                     }
                 }
 

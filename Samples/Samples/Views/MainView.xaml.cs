@@ -1,4 +1,6 @@
-﻿using Panuon.WPF.UI;
+﻿using Panuon.WPF;
+using Panuon.WPF.UI;
+using System.ComponentModel;
 using System.Windows;
 
 namespace Samples.Views
@@ -15,6 +17,17 @@ namespace Samples.Views
         public MainView()
         {
             InitializeComponent();
+
+            var itemsSource = new MachineItem[]
+            {
+                new MachineItem("M000001", "Working", "N/A") { Type = MachineType.UX_10 },
+                new MachineItem("M000002", "Working", "N/A"),
+                new MachineItem("M000003", "Working", "N/A"),
+                new MachineItem("M000004", "Repairing", "N/A"),
+                new MachineItem("M000005", "Repairing", "N/A"),
+            };
+            Dg1.ItemsSource = itemsSource;
+            Dg2.ItemsSource = itemsSource;
         }
         #endregion
 
@@ -41,5 +54,49 @@ namespace Samples.Views
         #region Functions
         #endregion
 
+    }
+    public enum MachineType
+    {
+        UX_01,
+        UX_02,
+        UX_10,
+    }
+
+    public class MachineItem
+        : NotifyPropertyChangedBase
+    {
+        #region Ctor
+        public MachineItem(string code, string state, string remark)
+        {
+            Code = code;
+            State = state;
+            Remark = remark;
+        }
+        #endregion
+
+        #region Properties
+        [ColumnWidth(Width = "Auto")]
+        [ColumnDisplayIndex(1)]
+        public string State { get => _state; set => Set(ref _state, value); }
+        private string _state;
+
+
+        [ColumnWidth(Width = "Auto")]
+        [ColumnDisplayIndex(2)]
+        public string Remark { get => _remark; set => Set(ref _remark, value); }
+        private string _remark;
+
+        [DisplayName("Machine Code")]
+        [ColumnWidth(Width = "*")]
+        [ColumnDisplayIndex(0)]
+        public string Code { get => _code; set => Set(ref _code, value); }
+        private string _code;
+
+        [DisplayName("Machine Type")]
+        [ColumnWidth(Width = "Auto")]
+        [ColumnDisplayIndex(3)]
+        public MachineType Type { get => _type; set => Set(ref _type, value); }
+        private MachineType _type;
+        #endregion
     }
 }

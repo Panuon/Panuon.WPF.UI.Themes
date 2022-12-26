@@ -14,6 +14,16 @@
 
     <Style TargetType="TextBox"
            BasedOn="{StaticResource {x:Static purs:StyleKeys.TextBoxStyle}}">
+        <Setter Property="ContextMenu">
+            <Setter.Value>
+                <ContextMenu>
+                    <MenuItem Command="Cut" />
+                    <MenuItem Command="Copy" />
+                    <MenuItem Command="Paste" />
+                    <MenuItem Command="SelectAll"/>
+                </ContextMenu>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Height">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistDoubleConverter}}"
@@ -21,7 +31,7 @@
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
-                    <Binding Path="(local:SwitchStylist.Style)"
+                    <Binding Path="(local:TextBoxStylist.Style)"
                              RelativeSource="{RelativeSource Self}" />
                 </MultiBinding>
             </Setter.Value>
@@ -36,8 +46,6 @@
                 Value="{Binding Path=(local:GeneralStylist.Feature), Converter={StaticResource {x:Static irs:ConverterKeys.ElementFontSizeConverter}}, RelativeSource={RelativeSource Self}}" />
         <Setter Property="FontWeight"
                 Value="{Binding Path=(local:GeneralStylist.Feature), Converter={StaticResource {x:Static irs:ConverterKeys.ElementFontWeightsConverter}}, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="BorderThickness"
-                Value="1.5" />
         <Setter Property="pu:TextBoxHelper.WatermarkForeground"
                 Value="{DynamicResource {x:Static rs:ResourceKeys.InputWatermarkForeground}}" />
         <Setter Property="pu:TextBoxHelper.FocusedWatermarkForeground"
@@ -48,10 +56,14 @@
                 Value="15" />
         <Setter Property="pu:TextBoxHelper.CornerRadius">
             <Setter.Value>
-                <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.ElementCornerRadiusConverter}}">
-                    <Binding Path="ActualHeight"
-                             RelativeSource="{RelativeSource Self}" />
+                <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistCornerRadiusConverter}}"
+                              ConverterParameter="Solid:auto;Border:auto;ShadowBorder:auto;SingleBorder:0">
+                    <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
+                             RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:TextBoxStylist.Style)"
+                             RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="ActualHeight"
                              RelativeSource="{RelativeSource Self}" />
                 </MultiBinding>
             </Setter.Value>
@@ -59,7 +71,7 @@
         <Setter Property="Background">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
-                              ConverterParameter="Solid:InputBackground;Border:[Transparent];ShadowBorder:BodyInvertedForeground">
+                              ConverterParameter="Solid:InputBackground;Border:BodyInvertedForeground;ShadowBorder:BodyInvertedForeground;SingleBorder:[Transparent]">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
@@ -71,7 +83,19 @@
         <Setter Property="BorderBrush">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
-                              ConverterParameter="Solid:InputBackground;Border:InputBorderBrush;ShadowBorder:InputBorderBrush">
+                              ConverterParameter="Solid:null;Border:InputBorderBrush;ShadowBorder:InputBorderBrush;SingleBorder:InputBorderBrush">
+                    <Binding RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:GeneralStylist.Feature)"
+                             RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:TextBoxStylist.Style)"
+                             RelativeSource="{RelativeSource Self}" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderThickness">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistThicknessConverter}}"
+                              ConverterParameter="Solid:0;Border:1.5;ShadowBorder:1.5;SingleBorder:0,0,0,1.5">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
@@ -83,7 +107,7 @@
         <Setter Property="pu:TextBoxHelper.FocusedBorderBrush">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
-                              ConverterParameter="Solid:null;Border:;ShadowBorder:">
+                              ConverterParameter="Solid:null;Border:;ShadowBorder:;SingleBorder:">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
@@ -95,7 +119,7 @@
         <Setter Property="pu:TextBoxHelper.FocusedShadowColor">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistColorConverter}}"
-                              ConverterParameter="Solid:null;Border:null;ShadowBorder:">
+                              ConverterParameter="Solid:null;Border:null;ShadowBorder:;SingleBorder:null">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />

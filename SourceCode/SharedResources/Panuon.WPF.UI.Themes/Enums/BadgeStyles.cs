@@ -3,5 +3,6 @@
     public enum BadgeStyles
     {
         Solid,
+        Border,
     }
 }

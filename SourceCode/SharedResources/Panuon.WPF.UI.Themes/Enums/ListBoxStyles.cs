@@ -1,10 +1,9 @@
 ﻿namespace Panuon.WPF.UI.Themes
 {
-    public enum TextBoxStyles
+    public enum ListBoxStyles
     {
         Solid,
         Border,
-        ShadowBorder,
-        SingleBorder,
+        Text,
     }
 }

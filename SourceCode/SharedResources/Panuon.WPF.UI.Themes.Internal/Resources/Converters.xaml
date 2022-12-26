@@ -10,6 +10,7 @@
     <icv:ElementPaddingConverter x:Key="{x:Static irs:ConverterKeys.ElementPaddingConverter}" />
     <icv:StylistBrushConverter x:Key="{x:Static irs:ConverterKeys.StylistBrushConverter}" />
     <icv:StylistColorConverter x:Key="{x:Static irs:ConverterKeys.StylistColorConverter}" />
+    <icv:StylistCornerRadiusConverter x:Key="{x:Static irs:ConverterKeys.StylistCornerRadiusConverter}" />
     <icv:StylistDoubleConverter x:Key="{x:Static irs:ConverterKeys.StylistDoubleConverter}" />
     <icv:StylistThicknessConverter x:Key="{x:Static irs:ConverterKeys.StylistThicknessConverter}" />
     <icv:ThemeBrushConverter x:Key="{x:Static irs:ConverterKeys.ThemeBrushConverter}" />

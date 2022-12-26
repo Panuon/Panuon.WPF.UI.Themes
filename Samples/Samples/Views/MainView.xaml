@@ -46,14 +46,17 @@
                    Height="1"
                    Fill="{DynamicResource {x:Static puthers:ResourceKeys.SeparatorBrush}}" />
         <ScrollViewer Grid.Row="2">
-            <StackPanel>
+            <StackPanel Margin="0,0,0,50">
                 <TextBlock Text="Badge"
                            FontSize="16"
                            FontWeight="Bold" />
                 <StackPanel Margin="0,15,0,0"
                             Orientation="Horizontal">
                     <pu:Badge Margin="15,0,0,0"
-                              Content="99+"
+                              Content="1" />
+                    <pu:Badge Margin="15,0,0,0"
+                              Content="1"
+                              puthe:BadgeStylist.Style="Border"
                               puthe:GeneralStylist.Feature="DangerColor" />
                 </StackPanel>
                 <TextBlock Margin="0,15,0,0"
@@ -117,6 +120,7 @@
                 <StackPanel Margin="0,15,0,0"
                             Orientation="Horizontal">
                     <ComboBox Width="200"
+                              pu:ComboBoxHelper.Icon="&#xe95a;"
                               pu:ComboBoxHelper.Watermark="Solid | Primary"
                               pu:ComboBoxHelper.ClearButtonVisibility="VisibleOnHoverAndNonnull"
                               puthe:ComboBoxStylist.Style="Solid">
@@ -128,6 +132,7 @@
                     </ComboBox>
                     <ComboBox Margin="15,0,0,0"
                               Width="200"
+                              pu:ComboBoxHelper.Icon="&#xe95a;"
                               pu:ComboBoxHelper.Watermark="Border | Warning"
                               pu:ComboBoxHelper.ClearButtonVisibility="VisibleOnHoverAndNonnull"
                               puthe:ComboBoxStylist.Style="Border"
@@ -140,6 +145,7 @@
                     </ComboBox>
                     <ComboBox Margin="15,0,0,0"
                               Width="200"
+                              pu:ComboBoxHelper.Icon="&#xe95a;"
                               pu:ComboBoxHelper.Watermark="ShadowBorder | Danger"
                               pu:ComboBoxHelper.ClearButtonVisibility="VisibleOnHoverAndNonnull"
                               puthe:ComboBoxStylist.Style="ShadowBorder"
@@ -150,6 +156,199 @@
                         <ComboBoxItem Content="Item 4" />
                         <ComboBoxItem Content="Item 5" />
                     </ComboBox>
+                    <ComboBox Margin="15,0,0,0"
+                              Width="200"
+                              pu:ComboBoxHelper.Icon="&#xe95a;"
+                              pu:ComboBoxHelper.Watermark="SingleBorder | Success"
+                              pu:ComboBoxHelper.ClearButtonVisibility="VisibleOnHoverAndNonnull"
+                              puthe:ComboBoxStylist.Style="SingleBorder"
+                              puthe:GeneralStylist.Feature="SuccessColor">
+                        <ComboBoxItem Content="Item 1" />
+                        <ComboBoxItem Content="Item 2" />
+                        <ComboBoxItem Content="Item 3" />
+                        <ComboBoxItem Content="Item 4" />
+                        <ComboBoxItem Content="Item 5" />
+                    </ComboBox>
+                </StackPanel>
+                <TextBlock Margin="0,15,0,0"
+                           Text="ContextMenu"
+                           FontSize="16"
+                           FontWeight="Bold" />
+                <StackPanel Margin="0,15,0,0"
+                            Orientation="Horizontal">
+                    <TextBlock Background="Transparent"
+                               Text="Right click here (Solid | Primary)">
+                        <TextBlock.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Icon="&#xe956;"
+                                          Header="Item 1" />
+                                <MenuItem Header="Item 2" />
+                                <MenuItem Icon="&#xe940;"
+                                          Foreground="Red"
+                                          pu:MenuItemHelper.HoverBackground="#22FF0000"
+                                          Header="Item 3"
+                                          pu:MenuItemHelper.SeparatorVisibility="Visible" />
+                                <MenuItem IsCheckable="True"
+                                          Header="Option 1"
+                                          pu:MenuItemHelper.SeparatorVisibility="Visible" />
+                                <MenuItem Header="Item 4">
+                                    <MenuItem Header="Item 4-1" />
+                                    <MenuItem Header="Item 4-2" />
+                                    <MenuItem Header="Item 4-3" />
+                                </MenuItem>
+
+                            </ContextMenu>
+                        </TextBlock.ContextMenu>
+                    </TextBlock>
+                    <TextBlock Margin="15,0,0,0"
+                               Background="Transparent"
+                               Text="Right click here (Border | Warning)">
+                        <TextBlock.ContextMenu>
+                            <ContextMenu puthe:ContextMenuStylist.Style="Border"
+                                         puthe:GeneralStylist.Feature="WarningColor">
+                                <MenuItem Icon="&#xe956;"
+                                          Header="Item 1" />
+                                <MenuItem Header="Item 2" />
+                                <MenuItem Icon="&#xe940;"
+                                          Foreground="Red"
+                                          pu:MenuItemHelper.HoverBorderBrush="Red"
+                                          pu:MenuItemHelper.HoverForeground="Red"
+                                          Header="Item 3"
+                                          pu:MenuItemHelper.SeparatorVisibility="Visible" />
+                                <MenuItem IsCheckable="True"
+                                          Header="Option 1"
+                                          pu:MenuItemHelper.SeparatorVisibility="Visible" />
+                                <MenuItem Header="Item 4">
+                                    <MenuItem Header="Item 4-1" />
+                                    <MenuItem Header="Item 4-2" />
+                                    <MenuItem Header="Item 4-3" />
+                                </MenuItem>
+
+                            </ContextMenu>
+                        </TextBlock.ContextMenu>
+                    </TextBlock>
+                    <TextBlock Margin="15,0,0,0"
+                               Background="Transparent"
+                               Text="Right click here (Text | Success)">
+                        <TextBlock.ContextMenu>
+                            <ContextMenu puthe:ContextMenuStylist.Style="Text"
+                                         puthe:GeneralStylist.Feature="SuccessColor">
+                                <MenuItem Icon="&#xe956;"
+                                          Header="Item 1" />
+                                <MenuItem Header="Item 2" />
+                                <MenuItem Icon="&#xe940;"
+                                          Foreground="Red"
+                                          pu:MenuItemHelper.HoverForeground="Red"
+                                          Header="Item 3"
+                                          pu:MenuItemHelper.SeparatorVisibility="Visible" />
+                                <MenuItem IsCheckable="True"
+                                          Header="Option 1"
+                                          pu:MenuItemHelper.SeparatorVisibility="Visible" />
+                                <MenuItem Header="Item 4">
+                                    <MenuItem Header="Item 4-1" />
+                                    <MenuItem Header="Item 4-2" />
+                                    <MenuItem Header="Item 4-3" />
+                                </MenuItem>
+
+                            </ContextMenu>
+                        </TextBlock.ContextMenu>
+                    </TextBlock>
+
+                </StackPanel>
+                <TextBlock Margin="0,15,0,0"
+                           Text="DataGrid"
+                           FontSize="16"
+                           FontWeight="Bold" />
+                <StackPanel Margin="0,15,0,0"
+                            Orientation="Horizontal">
+                    <DataGrid x:Name="Dg1"
+                              Width="400" />
+                    <DataGrid x:Name="Dg2"
+                              Margin="15,0,0,0"
+                              Width="400" />
+                </StackPanel>
+                <TextBlock Margin="0,15,0,0"
+                           Text="ListBox"
+                           FontSize="16"
+                           FontWeight="Bold" />
+                <StackPanel Margin="0,15,0,0"
+                            Orientation="Horizontal">
+                    <ListBox Width="150">
+                        <ListBoxItem Content="Item 1"
+                                     IsSelected="True" />
+                        <ListBoxItem Content="Item 2" />
+                        <ListBoxItem Content="Item 3" />
+                    </ListBox>
+                    <ListBox Margin="15,0,0,0"
+                             Width="150"
+                             puthe:ListBoxStylist.Style="Border">
+                        <ListBoxItem Content="Item 1"
+                                     IsSelected="True" />
+                        <ListBoxItem Content="Item 2" />
+                        <ListBoxItem Content="Item 3" />
+                    </ListBox>
+                    <ListBox Margin="15,0,0,0"
+                             Width="150"
+                             puthe:ListBoxStylist.Style="Text">
+                        <ListBoxItem Content="Item 1"
+                                     IsSelected="True" />
+                        <ListBoxItem Content="Item 2" />
+                        <ListBoxItem Content="Item 3" />
+                    </ListBox>
+                </StackPanel>
+                <TextBlock Margin="0,15,0,0"
+                           Text="MultiComboBox"
+                           FontSize="16"
+                           FontWeight="Bold" />
+                <StackPanel Margin="0,15,0,0"
+                            Orientation="Horizontal">
+                    <pu:MultiComboBox Width="200"
+                                      Watermark="Solid | Primary"
+                                      ClearButtonVisibility="VisibleOnHoverAndNonnull"
+                                      puthe:MultiComboBoxStylist.Style="Solid">
+                        <pu:MultiComboBoxItem Content="Item 1" />
+                        <pu:MultiComboBoxItem Content="Item 2" />
+                        <pu:MultiComboBoxItem Content="Item 3" />
+                        <pu:MultiComboBoxItem Content="Item 4" />
+                        <pu:MultiComboBoxItem Content="Item 5" />
+                    </pu:MultiComboBox>
+                    <pu:MultiComboBox Margin="15,0,0,0"
+                                      Width="200"
+                                      Watermark="Border | Warning"
+                                      ClearButtonVisibility="VisibleOnHoverAndNonnull"
+                                      puthe:MultiComboBoxStylist.Style="Border"
+                                      puthe:GeneralStylist.Feature="WarningColor">
+                        <pu:MultiComboBoxItem Content="Item 1" />
+                        <pu:MultiComboBoxItem Content="Item 2" />
+                        <pu:MultiComboBoxItem Content="Item 3" />
+                        <pu:MultiComboBoxItem Content="Item 4" />
+                        <pu:MultiComboBoxItem Content="Item 5" />
+                    </pu:MultiComboBox>
+                    <pu:MultiComboBox Margin="15,0,0,0"
+                                      Width="200"
+                                      Watermark="Border | Warning"
+                                      ClearButtonVisibility="VisibleOnHoverAndNonnull"
+                                      puthe:MultiComboBoxStylist.Style="ShadowBorder"
+                                      puthe:GeneralStylist.Feature="DangerColor">
+                        <pu:MultiComboBoxItem Content="Item 1" />
+                        <pu:MultiComboBoxItem Content="Item 2" />
+                        <pu:MultiComboBoxItem Content="Item 3" />
+                        <pu:MultiComboBoxItem Content="Item 4" />
+                        <pu:MultiComboBoxItem Content="Item 5" />
+                    </pu:MultiComboBox>
+                    <pu:MultiComboBox Margin="15,0,0,0"
+                                      Width="200"
+                                      Icon="&#xe95a;"
+                                      Watermark="Border | Warning"
+                                      ClearButtonVisibility="VisibleOnHoverAndNonnull"
+                                      puthe:MultiComboBoxStylist.Style="SingleBorder"
+                                      puthe:GeneralStylist.Feature="SuccessColor">
+                        <pu:MultiComboBoxItem Content="Item 1" />
+                        <pu:MultiComboBoxItem Content="Item 2" />
+                        <pu:MultiComboBoxItem Content="Item 3" />
+                        <pu:MultiComboBoxItem Content="Item 4" />
+                        <pu:MultiComboBoxItem Content="Item 5" />
+                    </pu:MultiComboBox>
                 </StackPanel>
                 <TextBlock Margin="0,15,0,0"
                            Text="RingProgressBar"
@@ -188,27 +387,77 @@
                                puthe:GeneralStylist.Feature="DangerColor" />
                 </StackPanel>
                 <TextBlock Margin="0,15,0,0"
+                           Text="TreeView"
+                           FontSize="16"
+                           FontWeight="Bold" />
+                <StackPanel Margin="0,15,0,0"
+                            Orientation="Horizontal">
+                    <TreeView Width="150">
+                        <TreeViewItem Header="Item 1"
+                                      IsSelected="True">
+                            <TreeViewItem Header="Item 1-1" />
+                            <TreeViewItem Header="Item 1-2" />
+                            <TreeViewItem Header="Item 1-3" />
+                        </TreeViewItem>
+                        <TreeViewItem Header="Item 2" />
+                        <TreeViewItem Header="Item 3" />
+                    </TreeView>
+                    <TreeView Margin="15,0,0,0"
+                              Width="150"
+                              puthe:TreeViewStylist.Style="Border">
+                        <TreeViewItem Header="Item 1"
+                                      IsSelected="True">
+                            <TreeViewItem Header="Item 1-1" />
+                            <TreeViewItem Header="Item 1-2" />
+                            <TreeViewItem Header="Item 1-3" />
+                        </TreeViewItem>
+                        <TreeViewItem Header="Item 2" />
+                        <TreeViewItem Header="Item 3" />
+                    </TreeView>
+                    <TreeView Margin="15,0,0,0"
+                              Width="150"
+                              puthe:TreeViewStylist.Style="Text">
+                        <TreeViewItem Header="Item 1"
+                                      IsSelected="True">
+                            <TreeViewItem Header="Item 1-1" />
+                            <TreeViewItem Header="Item 1-2" />
+                            <TreeViewItem Header="Item 1-3" />
+                        </TreeViewItem>
+                        <TreeViewItem Header="Item 2" />
+                        <TreeViewItem Header="Item 3" />
+                    </TreeView>
+                </StackPanel>
+                <TextBlock Margin="0,15,0,0"
                            Text="PasswordBox"
                            FontSize="16"
                            FontWeight="Bold" />
                 <StackPanel Margin="0,15,0,0"
                             Orientation="Horizontal">
                     <PasswordBox Width="200"
+                                 pu:PasswordBoxHelper.Icon="&#xe95a;"
                                  pu:PasswordBoxHelper.Watermark="Solid | Primary"
                                  puthe:PasswordBoxStylist.Style="Solid" />
                     <PasswordBox Margin="15,0,0,0"
                                  Width="200"
+                                 pu:PasswordBoxHelper.Icon="&#xe95a;"
                                  pu:PasswordBoxHelper.Watermark="Border | Warning"
                                  puthe:PasswordBoxStylist.Style="Border"
                                  puthe:GeneralStylist.Feature="WarningColor" />
                     <PasswordBox Margin="15,0,0,0"
                                  Width="200"
+                                 pu:PasswordBoxHelper.Icon="&#xe95a;"
                                  pu:PasswordBoxHelper.Watermark="ShadowBorder | Danger"
                                  puthe:PasswordBoxStylist.Style="ShadowBorder"
                                  puthe:GeneralStylist.Feature="DangerColor" />
+                    <PasswordBox Margin="15,0,0,0"
+                                 Width="200"
+                                 pu:PasswordBoxHelper.Icon="&#xe95a;"
+                                 pu:PasswordBoxHelper.Watermark="SingleBorder | Success"
+                                 puthe:PasswordBoxStylist.Style="SingleBorder"
+                                 puthe:GeneralStylist.Feature="SuccessColor" />
                 </StackPanel>
                 <TextBlock Margin="0,15,0,0"
-                           Text="PasswordBox"
+                           Text="ProgressBar"
                            FontSize="16"
                            FontWeight="Bold" />
                 <StackPanel Margin="0,15,0,0"
@@ -249,18 +498,27 @@
                 <StackPanel Margin="0,15,0,0"
                             Orientation="Horizontal">
                     <TextBox Width="200"
+                             pu:TextBoxHelper.Icon="&#xe95a;"
                              pu:TextBoxHelper.Watermark="Solid | Primary"
                              puthe:TextBoxStylist.Style="Solid" />
                     <TextBox Margin="15,0,0,0"
                              Width="200"
+                             pu:TextBoxHelper.Icon="&#xe95a;"
                              pu:TextBoxHelper.Watermark="Border | Warning"
                              puthe:TextBoxStylist.Style="Border"
-                             puthe:GeneralStylist.Feature="WarningColor,Bold,Large" />
+                             puthe:GeneralStylist.Feature="WarningColor" />
                     <TextBox Margin="15,0,0,0"
                              Width="200"
+                             pu:TextBoxHelper.Icon="&#xe95a;"
                              pu:TextBoxHelper.Watermark="ShadowBorder | Danger"
                              puthe:TextBoxStylist.Style="ShadowBorder"
                              puthe:GeneralStylist.Feature="DangerColor" />
+                    <TextBox Margin="15,0,0,0"
+                             Width="200"
+                             pu:TextBoxHelper.Icon="&#xe95a;"
+                             pu:TextBoxHelper.Watermark="SingleBorder | SuccessColor"
+                             puthe:TextBoxStylist.Style="SingleBorder"
+                             puthe:GeneralStylist.Feature="SuccessColor" />
                 </StackPanel>
 
             </StackPanel>

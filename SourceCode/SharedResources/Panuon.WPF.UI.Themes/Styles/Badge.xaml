@@ -17,7 +17,7 @@
         <Setter Property="Width">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistDoubleConverter}}"
-                              ConverterParameter="Large:36;Normal:30;Small:20">
+                              ConverterParameter="Large:32;Normal:26;Small:18">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
@@ -29,7 +29,7 @@
         <Setter Property="Height">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistDoubleConverter}}"
-                              ConverterParameter="Large:36;Normal:30;Small:20">
+                              ConverterParameter="Large:32;Normal:26;Small:18">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
@@ -41,7 +41,31 @@
         <Setter Property="Background">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
-                              ConverterParameter="Solid:">
+                              ConverterParameter="Solid:;Border:[Transparent]">
+                    <Binding RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:GeneralStylist.Feature)"
+                             RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:BadgeStylist.Style)"
+                             RelativeSource="{RelativeSource Self}" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
+                              ConverterParameter="Solid:null;Border:">
+                    <Binding RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:GeneralStylist.Feature)"
+                             RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:BadgeStylist.Style)"
+                             RelativeSource="{RelativeSource Self}" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderThickness">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistThicknessConverter}}"
+                              ConverterParameter="Solid:0;Border:1.5">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
@@ -53,7 +77,7 @@
         <Setter Property="Foreground">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
-                              ConverterParameter="Solid:BodyInvertedForeground">
+                              ConverterParameter="Solid:BodyInvertedForeground;Border:">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
@@ -64,12 +88,20 @@
         </Setter>
         <Setter Property="Padding"
                 Value="0" />
-        <Setter Property="BorderThickness"
-                Value="0" />
         <Setter Property="FontFamily"
                 Value="{Binding Path=(local:GeneralStylist.Feature), Converter={StaticResource {x:Static irs:ConverterKeys.ElementFontFamilyConverter}}, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="FontSize"
-                Value="{Binding Path=(local:GeneralStylist.Feature), Converter={StaticResource {x:Static irs:ConverterKeys.ElementFontSizeConverter}}, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="FontSize">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistDoubleConverter}}"
+                              ConverterParameter="Large:14;Normal:10;Small:8">
+                    <Binding RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:GeneralStylist.Feature)"
+                             RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:BadgeStylist.Style)"
+                             RelativeSource="{RelativeSource Self}" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
         <Setter Property="FontWeight"
                 Value="{Binding Path=(local:GeneralStylist.Feature), Converter={StaticResource {x:Static irs:ConverterKeys.ElementFontWeightsConverter}}, RelativeSource={RelativeSource Self}}" />
         <Setter Property="CornerRadius"
@@ -81,7 +113,7 @@
         <Setter Property="WaveBrush">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
-                              ConverterParameter="Solid:">
+                              ConverterParameter="Solid:;Border:">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
