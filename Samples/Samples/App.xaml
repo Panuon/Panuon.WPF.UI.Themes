@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Samples"
              StartupUri="Views/MainView.xaml">
     <Application.Resources>
-        <ResourceDictionary Source="/Panuon.WPF.UI.Themes;component/LightBlue.xaml" />
+        <ResourceDictionary Source="/Panuon.WPF.UI.Themes;component/DarkBlue.xaml" />
     </Application.Resources>
 </Application>

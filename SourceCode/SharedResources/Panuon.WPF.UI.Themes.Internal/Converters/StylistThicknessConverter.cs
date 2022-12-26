@@ -10,10 +10,10 @@ namespace Panuon.WPF.UI.Themes.Internal.Converters
     internal class StylistThicknessConverter
         : IMultiValueConverter
     {
-        private static Dictionary<string, Dictionary<string, Tuple<double, int>>> _cacheParameters 
-            = new Dictionary<string, Dictionary<string, Tuple<double, int>>>();
+        private static Dictionary<string, Dictionary<string, Tuple<string, int>>> _cacheParameters 
+            = new Dictionary<string, Dictionary<string, Tuple<string, int>>>();
 
-        private static BrushConverter _brushConverter = new BrushConverter();
+        private static ThicknessConverter _thicknessConverter = new ThicknessConverter();
 
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
@@ -35,7 +35,7 @@ namespace Panuon.WPF.UI.Themes.Internal.Converters
                 case 0:
                     return null;
                 case 1:
-                    return new Thickness(thickness);
+                    return (Thickness)_thicknessConverter.ConvertFromString(thickness);
             }
 
             return null;
@@ -50,10 +50,10 @@ namespace Panuon.WPF.UI.Themes.Internal.Converters
         {
             var splitStyles = param.Split(';');
 
-            var dictionary = new Dictionary<string, Tuple<double, int>>();
+            var dictionary = new Dictionary<string, Tuple<string, int>>();
             foreach (var splitStyle in splitStyles)
             {
-                var value = 0d;
+                var value = "0,0,0,0";
                 var valueType = 0; //0: null;1: value;
 
                 var spliteStyles = splitStyle.Split(':');
@@ -63,14 +63,14 @@ namespace Panuon.WPF.UI.Themes.Internal.Converters
                 switch (thickness)
                 {
                     case "null":
-                        valueType = 1;
+                        valueType = 0;
                         break;
                     default:
-                        value = double.Parse(thickness);
+                        value = thickness;
                         valueType = 1;
                         break;
                 }
-                dictionary.Add(styleKey, new Tuple<double, int>(value, valueType));
+                dictionary.Add(styleKey, new Tuple<string, int>(value, valueType));
             }
 
             _cacheParameters.Add(param, dictionary);

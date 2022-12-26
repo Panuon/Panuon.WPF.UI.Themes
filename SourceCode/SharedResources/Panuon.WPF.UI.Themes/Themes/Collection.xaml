@@ -19,6 +19,7 @@
         <core:SharedResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI.Themes;component/Styles/ComboBox.xaml" />
         <core:SharedResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI.Themes;component/Styles/ComboBoxItem.xaml" />
         <core:SharedResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI.Themes;component/Styles/ContextMenu.xaml" />
+        <core:SharedResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI.Themes;component/Styles/MenuItem.xaml" />
         <core:SharedResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI.Themes;component/Styles/DataGrid.xaml" />
         <core:SharedResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI.Themes;component/Styles/Expander.xaml" />
         <core:SharedResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI.Themes;component/Styles/GroupBox.xaml" />
@@ -29,6 +30,8 @@
         <core:SharedResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI.Themes;component/Styles/ListViewItem.xaml" />
         <core:SharedResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI.Themes;component/Styles/Menu.xaml" />
         <core:SharedResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI.Themes;component/Styles/MenuItem.xaml" />
+        <core:SharedResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI.Themes;component/Styles/MultiComboBox.xaml" />
+        <core:SharedResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI.Themes;component/Styles/MultiComboBoxItem.xaml" />
         <core:SharedResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI.Themes;component/Styles/ProgressBar.xaml" />
         <core:SharedResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI.Themes;component/Styles/PasswordBox.xaml" />
         <core:SharedResourceDictionary Source="pack://application:,,,/Panuon.WPF.UI.Themes;component/Styles/RadioButton.xaml" />

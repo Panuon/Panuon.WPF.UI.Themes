@@ -17,22 +17,34 @@ namespace Panuon.WPF.UI.Themes.Internal.Converters
         {
             var element = (FrameworkElement)values[0];
             var generalFeatures = (GeneralFeatures)values[1];
+            var style = values[2]?.ToString();
+
             var param = (string)parameter;
 
             if (!_cacheParameters.ContainsKey(param))
             {
                 AddCacheParameter(param);
             }
+            var cacheParam = _cacheParameters[param];
 
             if (generalFeatures.HasFlag(GeneralFeatures.Large))
             {
-                return _cacheParameters[param][nameof(GeneralFeatures.Large)];
+                var combineKey = $"{nameof(GeneralFeatures.Large)}-{style}";
+                return cacheParam.ContainsKey(combineKey)
+                    ? cacheParam[combineKey]
+                    : cacheParam[nameof(GeneralFeatures.Large)];
             }
             else if (generalFeatures.HasFlag(GeneralFeatures.Small))
             {
-                return _cacheParameters[param][nameof(GeneralFeatures.Small)];
+                var combineKey = $"{nameof(GeneralFeatures.Small)}-{style}";
+                return cacheParam.ContainsKey(combineKey)
+                     ? cacheParam[combineKey]
+                     : cacheParam[nameof(GeneralFeatures.Small)];
             }
-            return _cacheParameters[param]["Normal"];
+            var normalCombineKey = $"Normal-{style}";
+            return cacheParam.ContainsKey(normalCombineKey)
+                ? cacheParam[normalCombineKey]
+                : cacheParam["Normal"];
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)

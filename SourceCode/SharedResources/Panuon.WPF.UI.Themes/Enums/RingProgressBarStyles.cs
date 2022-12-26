@@ -3,8 +3,6 @@
     public enum RingProgressBarStyles
     {
         Solid,
-        ColorBorder,
-        ColorBorderShadow,
-        Border,
+        ColorSolid,
     }
 }

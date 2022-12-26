@@ -14,8 +14,8 @@ namespace Panuon.WPF.UI.Themes.Internal.Converters
     internal class StylistBrushConverter
         : IMultiValueConverter
     {
-        private static Dictionary<string, Dictionary<string, Tuple<string, int, double>>> _cacheParameters 
-            = new Dictionary<string, Dictionary<string, Tuple<string, int, double>>>();
+        private static Dictionary<string, Dictionary<string, Tuple<string, int, double, double>>> _cacheParameters 
+            = new Dictionary<string, Dictionary<string, Tuple<string, int, double, double>>>();
 
         private static BrushConverter _brushConverter = new BrushConverter();
 
@@ -34,6 +34,7 @@ namespace Panuon.WPF.UI.Themes.Internal.Converters
             var key = cacheParameter.Item1;
             var type = cacheParameter.Item2; //0: ThemeColor;1: null;2: system colors;3: resource;
             var percent = cacheParameter.Item3;
+            var opacity = cacheParameter.Item4;
             Brush result = null;
             switch (type)
             {
@@ -47,11 +48,13 @@ namespace Panuon.WPF.UI.Themes.Internal.Converters
                     result = _brushConverter.ConvertFromString(key) as Brush;
                     break;
                 case 3:
-                    result = element.FindResource(ResourceKeys.ResourceFields[key]) as Brush;
+                   result = element.FindResource(ResourceKeys.ResourceFields[key]) as Brush;
                     break;
             }
 
-            return GetLightenBrush(result, percent);
+            return percent == 1
+                ? GetTransparentBrush(result, opacity)
+                : GetLightenBrush(result, percent);
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
@@ -63,12 +66,13 @@ namespace Panuon.WPF.UI.Themes.Internal.Converters
         {
             var splitStyles = param.Split(';');
 
-            var dictionary = new Dictionary<string, Tuple<string, int, double>>();
+            var dictionary = new Dictionary<string, Tuple<string, int, double, double>>();
             foreach (var splitStyle in splitStyles)
             {
                 var valueKey = "";
                 var valueType = 0; //0: ThemeColor;1: null;2: system colors;3: resource;
                 var percent = 1d;
+                var opacity = 1d;
                 var spliteStyles = splitStyle.Split(':');
                 var styleKey = spliteStyles[0];
                 var color = spliteStyles[1];
@@ -77,7 +81,15 @@ namespace Panuon.WPF.UI.Themes.Internal.Converters
                 {
                     var colorSplits = color.Split(',');
                     color = colorSplits[0];
-                    percent = double.Parse(colorSplits[1]);
+                    var value = colorSplits[1];
+                    if (value.EndsWith("p"))
+                    {
+                        opacity = double.Parse(value.Remove(value.Length - 1));
+                    }
+                    else
+                    {
+                       percent = double.Parse(colorSplits[1]);
+                    }
                 }
 
                 switch (color)
@@ -100,7 +112,7 @@ namespace Panuon.WPF.UI.Themes.Internal.Converters
                         }
                         break;
                 }
-                dictionary.Add(styleKey, new Tuple<string, int, double>(valueKey, valueType, percent));
+                dictionary.Add(styleKey, new Tuple<string, int, double, double>(valueKey, valueType, percent, opacity));
             }
 
             _cacheParameters.Add(param, dictionary);
@@ -134,6 +146,20 @@ namespace Panuon.WPF.UI.Themes.Internal.Converters
                 return element.FindResource(ResourceKeys.DangerBrush) as Brush;
             }
             return element.FindResource(ResourceKeys.PrimaryBrush) as Brush;
+        }
+
+        public static Brush GetTransparentBrush(Brush value,
+            double opacity)
+        {
+            var brush = value as SolidColorBrush;
+            if (brush == null
+                || opacity == 1)
+            {
+                return value;
+            }
+            var newBrush = brush.CloneCurrentValue();
+            newBrush.Opacity = opacity;
+            return newBrush;
         }
 
         public static Brush GetLightenBrush(Brush value,

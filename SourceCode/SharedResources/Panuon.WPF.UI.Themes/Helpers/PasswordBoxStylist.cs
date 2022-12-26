@@ -8,18 +8,18 @@ namespace Panuon.WPF.UI.Themes
         #region Properties
 
         #region Style
-        public static TextBoxStyles GetStyle(PasswordBox passwordBox)
+        public static PasswordBoxStyles GetStyle(PasswordBox passwordBox)
         {
-            return (TextBoxStyles)passwordBox.GetValue(StyleProperty);
+            return (PasswordBoxStyles)passwordBox.GetValue(StyleProperty);
         }
 
-        public static void SetStyle(PasswordBox passwordBox, TextBoxStyles value)
+        public static void SetStyle(PasswordBox passwordBox, PasswordBoxStyles value)
         {
             passwordBox.SetValue(StyleProperty, value);
         }
 
         public static readonly DependencyProperty StyleProperty =
-            DependencyProperty.RegisterAttached("Style", typeof(TextBoxStyles), typeof(PasswordBoxStylist), new PropertyMetadata(TextBoxStyles.Border));
+            DependencyProperty.RegisterAttached("Style", typeof(PasswordBoxStyles), typeof(PasswordBoxStylist), new PropertyMetadata(PasswordBoxStyles.Border));
         #endregion
 
         #endregion

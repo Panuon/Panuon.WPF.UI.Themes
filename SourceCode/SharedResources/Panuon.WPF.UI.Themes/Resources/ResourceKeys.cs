@@ -25,6 +25,7 @@ namespace Panuon.WPF.UI.Themes.Resources
         public const string InputBorderBrush = nameof(InputBorderBrush);
         public const string InputForeground = nameof(InputForeground);
         public const string InputWatermarkForeground = nameof(InputWatermarkForeground);
+        public const string InputSecondaryWatermarkForeground = nameof(InputSecondaryWatermarkForeground);
         public const string InputHoverSheetBackground = nameof(InputHoverSheetBackground);
         public const string InputSelectedSheetBackground = nameof(InputSelectedSheetBackground);
 
@@ -47,7 +48,7 @@ namespace Panuon.WPF.UI.Themes.Resources
         public const string SuccessBrush = nameof(SuccessBrush);
         public const string InfoBrush = nameof(InfoBrush);
 
-        public const string ShadowColor = nameof(ShadowColor);
+        public const string PrimaryShadowColor = nameof(PrimaryShadowColor);
 
 
     }

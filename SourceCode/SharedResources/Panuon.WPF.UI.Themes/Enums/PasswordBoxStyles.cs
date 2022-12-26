@@ -4,5 +4,7 @@
     {
         Solid,
         Border,
+        ShadowBorder,
+        SingleBorder,
     }
 }

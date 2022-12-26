@@ -5,5 +5,6 @@
         Solid,
         Border,
         ShadowBorder,
+        SingleBorder,
     }
 }

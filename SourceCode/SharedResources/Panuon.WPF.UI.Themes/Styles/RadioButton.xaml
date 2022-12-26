@@ -21,6 +21,8 @@
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="(local:RadioButtonStylist.Style)"
+                             RelativeSource="{RelativeSource Self}" />
                 </MultiBinding>
             </Setter.Value>
         </Setter>
@@ -28,6 +30,8 @@
                 Value="Top" />
         <Setter Property="HorizontalAlignment"
                 Value="Left" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource {x:Static rs:ResourceKeys.BodyForeground}}" />
         <Setter Property="FontFamily"
                 Value="{Binding Path=(local:GeneralStylist.Feature), Converter={StaticResource {x:Static irs:ConverterKeys.ElementFontFamilyConverter}}, RelativeSource={RelativeSource Self}}" />
         <Setter Property="FontSize"
