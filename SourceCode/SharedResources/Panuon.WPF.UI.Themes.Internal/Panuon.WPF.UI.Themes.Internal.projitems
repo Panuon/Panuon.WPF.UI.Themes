@@ -20,6 +20,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Converters\StylistColorConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\StylistDoubleConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\StylistCornerRadiusConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\StylistDataGridGridLinesVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\StylistVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\StylistThicknessConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\StylistBrushConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ThemeBrushConverter.cs" />

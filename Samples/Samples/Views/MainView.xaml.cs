@@ -28,6 +28,7 @@ namespace Samples.Views
             };
             Dg1.ItemsSource = itemsSource;
             Dg2.ItemsSource = itemsSource;
+            Dg3.ItemsSource = itemsSource;
         }
         #endregion
 

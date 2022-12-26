@@ -11,7 +11,9 @@
     <icv:StylistBrushConverter x:Key="{x:Static irs:ConverterKeys.StylistBrushConverter}" />
     <icv:StylistColorConverter x:Key="{x:Static irs:ConverterKeys.StylistColorConverter}" />
     <icv:StylistCornerRadiusConverter x:Key="{x:Static irs:ConverterKeys.StylistCornerRadiusConverter}" />
+    <icv:StylistDataGridGridLinesVisibilityConverter x:Key="{x:Static irs:ConverterKeys.StylistDataGridGridLinesVisibilityConverter}" />
     <icv:StylistDoubleConverter x:Key="{x:Static irs:ConverterKeys.StylistDoubleConverter}" />
     <icv:StylistThicknessConverter x:Key="{x:Static irs:ConverterKeys.StylistThicknessConverter}" />
+    <icv:StylistVisibilityConverter x:Key="{x:Static irs:ConverterKeys.StylistVisibilityConverter}" />
     <icv:ThemeBrushConverter x:Key="{x:Static irs:ConverterKeys.ThemeBrushConverter}" />
 </ResourceDictionary>

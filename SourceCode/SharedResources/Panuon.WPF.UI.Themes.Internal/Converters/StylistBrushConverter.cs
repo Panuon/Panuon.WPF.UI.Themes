@@ -48,7 +48,7 @@ namespace Panuon.WPF.UI.Themes.Internal.Converters
                     result = _brushConverter.ConvertFromString(key) as Brush;
                     break;
                 case 3:
-                    result = element.FindResource(ResourceKeys.ResourceFields[key]) as Brush;
+                   result = element.FindResource(ResourceKeys.ResourceFields[key]) as Brush;
                     break;
             }
 

@@ -10,8 +10,10 @@
         public const string StylistBrushConverter = nameof(StylistBrushConverter);
         public const string StylistColorConverter = nameof(StylistColorConverter);
         public const string StylistCornerRadiusConverter = nameof(StylistCornerRadiusConverter);
+        public const string StylistDataGridGridLinesVisibilityConverter = nameof(StylistDataGridGridLinesVisibilityConverter);
         public const string StylistDoubleConverter = nameof(StylistDoubleConverter);
         public const string StylistThicknessConverter = nameof(StylistThicknessConverter);
+        public const string StylistVisibilityConverter = nameof(StylistVisibilityConverter);
         public const string ThemeBrushConverter = nameof(ThemeBrushConverter);
     }
 }

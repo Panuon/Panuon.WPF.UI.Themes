@@ -3,6 +3,7 @@
     public enum DataGridStyles
     {
         Solid,
+        CardSolid,
         Border,
     }
 }

@@ -179,7 +179,7 @@
                     <TextBlock Background="Transparent"
                                Text="Right click here (Solid | Primary)">
                         <TextBlock.ContextMenu>
-                            <ContextMenu>
+                            <ContextMenu Placement="Left">
                                 <MenuItem Icon="&#xe956;"
                                           Header="Item 1" />
                                 <MenuItem Header="Item 2" />
@@ -259,14 +259,23 @@
                            Text="DataGrid"
                            FontSize="16"
                            FontWeight="Bold" />
-                <StackPanel Margin="0,15,0,0"
-                            Orientation="Horizontal">
+                <WrapPanel Margin="0,15,0,0"
+                           Orientation="Horizontal">
                     <DataGrid x:Name="Dg1"
-                              Width="400" />
+                              Margin="0,0,15,15"
+                              Width="400"
+                              SelectedIndex="0" />
                     <DataGrid x:Name="Dg2"
-                              Margin="15,0,0,0"
-                              Width="400" />
-                </StackPanel>
+                              Margin="0,0,15,15"
+                              Width="400"
+                              SelectedIndex="0"
+                              puthe:DataGridStylist.Style="CardSolid" />
+                    <DataGrid x:Name="Dg3"
+                              Margin="0,0,15,15"
+                              Width="400"
+                              SelectedIndex="0"
+                              puthe:DataGridStylist.Style="Border" />
+                </WrapPanel>
                 <TextBlock Margin="0,15,0,0"
                            Text="ListBox"
                            FontSize="16"
