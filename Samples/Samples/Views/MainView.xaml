@@ -13,6 +13,8 @@
             Height="600"
             Width="1000"
             WindowStartupLocation="CenterScreen"
+            Background="{DynamicResource {x:Static puthers:ResourceKeys.WindowBackground}}"
+            Foreground="{DynamicResource {x:Static puthers:ResourceKeys.BodyForeground}}"
             MaskBrush="#AA000000"
             pu:ScrollBarHelper.ThumbBackground="{DynamicResource {x:Static puthers:ResourceKeys.InputBorderBrush}}">
     <pu:WindowXCaption.HeaderTemplate>

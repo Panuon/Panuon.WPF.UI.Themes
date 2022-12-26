@@ -39,6 +39,8 @@
                 Value="{Binding Path=(local:GeneralStylist.Feature), Converter={StaticResource {x:Static irs:ConverterKeys.ElementFontWeightsConverter}}, RelativeSource={RelativeSource Self}}" />
         <Setter Property="BorderThickness"
                 Value="1.5" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource {x:Static rs:ResourceKeys.BodyForeground}}" />
         <Setter Property="pu:IconHelper.Margin"
                 Value="7,0,2,0" />
         <Setter Property="pu:ShadowHelper.Opacity"
@@ -60,7 +62,7 @@
         <Setter Property="Background">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
-                              ConverterParameter="Solid:InputBackground;Border:BodyInvertedForeground;ShadowBorder:BodyInvertedForeground;SingleBorder:[Transparent]">
+                              ConverterParameter="Solid:InputBackground;Border:WindowBackground;ShadowBorder:WindowBackground;SingleBorder:[Transparent]">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />

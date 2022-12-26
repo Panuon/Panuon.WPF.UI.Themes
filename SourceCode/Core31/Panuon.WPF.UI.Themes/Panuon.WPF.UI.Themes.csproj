@@ -6,6 +6,15 @@
 	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<WarningLevel>5</WarningLevel>
+		<OutputPath>..\..\Outputs\Debug\Core31\</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\Outputs\Release\Core31\</OutputPath>
+	</PropertyGroup>
+	
   <Import Project="..\..\SharedResources\Panuon.WPF.UI.Themes.Internal\Panuon.WPF.UI.Themes.Internal.projitems" Label="Shared" />
 
   <Import Project="..\..\SharedResources\Panuon.WPF.UI.Themes\Panuon.WPF.UI.Themes.projitems" Label="Shared" />

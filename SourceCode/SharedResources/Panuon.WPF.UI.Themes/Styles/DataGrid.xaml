@@ -31,6 +31,10 @@
            BasedOn="{StaticResource {x:Static purs:StyleKeys.DataGridStyle}}">
         <Setter Property="BorderThickness"
                 Value="0" />
+        <Setter Property="Background"
+                Value="{DynamicResource {x:Static rs:ResourceKeys.WindowBackground}}" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource {x:Static rs:ResourceKeys.BodyForeground}}" />
         <Setter Property="BorderBrush"
                 Value="{DynamicResource {x:Static rs:ResourceKeys.InputBorderBrush}}" />
         <Setter Property="HorizontalGridLinesBrush"

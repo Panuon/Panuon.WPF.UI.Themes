@@ -57,7 +57,7 @@
         <Setter Property="Background">
             <Setter.Value>
                 <MultiBinding Converter="{StaticResource {x:Static irs:ConverterKeys.StylistBrushConverter}}"
-                              ConverterParameter="Solid:InputBorderBrush,0.3;ColorSolid:,0.2;Border:[Transparent]">
+                              ConverterParameter="Solid:InputBorderBrush,0.2;ColorSolid:,0.2;Border:[Transparent]">
                     <Binding RelativeSource="{RelativeSource Self}" />
                     <Binding Path="(local:GeneralStylist.Feature)"
                              RelativeSource="{RelativeSource Self}" />

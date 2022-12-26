@@ -21,10 +21,14 @@
                 Value="{Binding Path=(local:GeneralStylist.Feature), Converter={StaticResource {x:Static irs:ConverterKeys.ElementFontSizeConverter}}, RelativeSource={RelativeSource Self}}" />
         <Setter Property="FontWeight"
                 Value="{Binding Path=(local:GeneralStylist.Feature), Converter={StaticResource {x:Static irs:ConverterKeys.ElementFontWeightsConverter}}, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="Background"
+                Value="{DynamicResource {x:Static rs:ResourceKeys.InputBackground}}" />
         <Setter Property="BorderThickness"
                 Value="0" />
         <Setter Property="BorderBrush"
                 Value="{DynamicResource {x:Static rs:ResourceKeys.InputBorderBrush}}" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource {x:Static rs:ResourceKeys.InputForeground}}" />
         <Setter Property="pu:TreeViewHelper.ItemsPadding"
                 Value="10,7" />
         <Setter Property="pu:TreeViewHelper.ToggleArrowToggleButtonStyle">

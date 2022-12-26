@@ -7,6 +7,15 @@
 	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<WarningLevel>5</WarningLevel>
+		<OutputPath>..\..\Outputs\Debug\Net5\</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\Outputs\Release\Net5\</OutputPath>
+	</PropertyGroup>
+	
   <Import Project="..\..\SharedResources\Panuon.WPF.UI.Themes.Internal\Panuon.WPF.UI.Themes.Internal.projitems" Label="Shared" />
 
   <Import Project="..\..\SharedResources\Panuon.WPF.UI.Themes\Panuon.WPF.UI.Themes.projitems" Label="Shared" />
